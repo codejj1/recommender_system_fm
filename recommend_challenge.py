@@ -29,6 +29,19 @@ def get_recommendations(model, coo_mtrx, users_ids):
 
         print '\n' # Get it pretty
 
+        #print data['matrix'].tocsr()[user].indices[:3] 
+        print data['artists']
+        #known_positives = data['artists'][data['matrix'].tocsr()[user].indices]
+        known_positives = data['matrix'].tocsr()[user].indices[:3]
+        
+        print 'Known positives for user %s:' % user
+
+        for x in known_positives.tolist():
+            for artist, values in data['artists'].iteritems():
+                if int(x) == values['id']:
+                    print '   - %s' % values['name']
+
+        print '\n'
 
 user_1 = raw_input('Select user_1 (0 to %s): ' % data['users'])
 user_2 = raw_input('Select user_2 (0 to %s): ' % data['users'])
