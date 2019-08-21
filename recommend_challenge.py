@@ -30,7 +30,7 @@ def get_recommendations(model, coo_mtrx, users_ids):
         print '\n' # Get it pretty
 
         #print data['matrix'].tocsr()[user].indices[:3] 
-        print data['artists']
+        #print data['artists']
         #known_positives = data['artists'][data['matrix'].tocsr()[user].indices]
         known_positives = data['matrix'].tocsr()[user].indices[:3]
         

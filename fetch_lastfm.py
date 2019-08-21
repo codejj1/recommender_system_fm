@@ -51,7 +51,7 @@ def fetch_lastfm(min_plays=200):
                 data.append(plays)
                 row.append(users[user])
                 col.append(artists[artist_id]['id'])
-
+    
     # Our matrix: ((plays, (user, artist)))
     coo = coo_matrix((data,(row,col)))
 
